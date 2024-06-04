@@ -162,6 +162,7 @@ std::unordered_map<std::string, std::string> new_prop_name_map() {
     prop_map["pacp"] = "pacphase";
     prop_map["per"] = "period";
     prop_map["pw"] = "width";
+    prop_map["pwlFile"] = "file";
     prop_map["rc"] = "rclosed";
     prop_map["ro"] = "ropen";
     prop_map["srcType"] = "type";
@@ -246,9 +247,9 @@ void traits::nstream<spectre_stream>::write_cv_header(type &stream, const std::s
         lstream b;
         b << "subckt";
         b << name;
-        spectre::get_cv_pins(b, info.in_terms);
         spectre::get_cv_pins(b, info.out_terms);
         spectre::get_cv_pins(b, info.io_terms);
+        spectre::get_cv_pins(b, info.in_terms);
 
         // write definition line
         b.to_file(stream, spirit::namespace_spectre{});

@@ -183,12 +183,12 @@ void write_cv_header(verilog_stream &stream, const std::string &name,
 
     bool has_prev_term = false;
     auto &term_net_attrs = info.term_net_attrs;
-    write_cv_ports(stream, info.in_terms, has_prev_term, "    input ", term_net_attrs, cv,
-                   wrap_conn_list_ptr, used_names_ptr, sup_val_ptr);
     write_cv_ports(stream, info.out_terms, has_prev_term, "    output", term_net_attrs, cv,
                    wrap_conn_list_ptr, used_names_ptr, sup_val_ptr);
     write_cv_ports(stream, info.io_terms, has_prev_term, "    inout ", term_net_attrs, cv,
                    wrap_conn_list_ptr, used_names_ptr, sup_val_ptr, true);
+    write_cv_ports(stream, info.in_terms, has_prev_term, "    input ", term_net_attrs, cv,
+                   wrap_conn_list_ptr, used_names_ptr, sup_val_ptr);
     if (has_prev_term)
         stream << '\n';
     stream << ");";
