@@ -125,9 +125,9 @@ void write_cv_content(Stream &stream, const sch::cellview_info &info,
             auto inst_ast = cbag::util::parse_cdba_name_unit(inst_name);
             auto n = inst_ast.size();
             auto term_net_vec = term_net_vec_t();
-            split_array_inst_nets(term_net_vec, inst_name, n, inst->connections, cv_info.in_terms);
             split_array_inst_nets(term_net_vec, inst_name, n, inst->connections, cv_info.out_terms);
             split_array_inst_nets(term_net_vec, inst_name, n, inst->connections, cv_info.io_terms);
+            split_array_inst_nets(term_net_vec, inst_name, n, inst->connections, cv_info.in_terms);
 
             for (decltype(n) inst_idx = 0; inst_idx < n; ++inst_idx) {
                 if (flat && cv_info.cv_ptr) {

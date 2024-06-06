@@ -175,14 +175,14 @@ void traits::nstream<cdl_stream>::write_cv_header(type &stream, const std::strin
     b2 << "*.PININFO";
     if (stream.square_bracket()) {
         auto tag = spirit::namespace_verilog{};
-        cdl::get_cv_term_bits(b, b2, info.in_terms, ":I", tag);
         cdl::get_cv_term_bits(b, b2, info.out_terms, ":O", tag);
         cdl::get_cv_term_bits(b, b2, info.io_terms, ":B", tag);
+        cdl::get_cv_term_bits(b, b2, info.in_terms, ":I", tag);
     } else {
         auto tag = spirit::namespace_cdba{};
-        cdl::get_cv_term_bits(b, b2, info.in_terms, ":I", tag);
         cdl::get_cv_term_bits(b, b2, info.out_terms, ":O", tag);
         cdl::get_cv_term_bits(b, b2, info.io_terms, ":B", tag);
+        cdl::get_cv_term_bits(b, b2, info.in_terms, ":I", tag);
     }
 
     // write definition line
