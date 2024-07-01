@@ -60,6 +60,8 @@ enum class design_output : enum_t {
     VERILOG = 5,
     SYSVERILOG = 6,
     SPECTRE = 7,
+    OASIS = 8,
+    NGSPICE = 9,
 };
 
 } // namespace cbag
