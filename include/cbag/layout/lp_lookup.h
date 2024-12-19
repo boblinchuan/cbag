@@ -48,6 +48,7 @@ limitations under the License.
 #define CBAG_COMMON_LP_LOOKUP_H
 
 #include <unordered_map>
+#include <optional>
 
 #include <cbag/common/typedefs.h>
 

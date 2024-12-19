@@ -66,7 +66,7 @@ namespace parser {
 
 name_unit_type const name_unit = "name_unit";
 
-auto check_str = [](auto &ctx) { x3::_pass(ctx) = (std::isalpha(x3::_attr(ctx).at(0)) != 0); };
+inline auto check_str = [](auto &ctx) { x3::_pass(ctx) = (std::isalpha(x3::_attr(ctx).at(0)) != 0); };
 
 /** A string with no spaces, parentheses, angle brackets, colon, commas, or stars.
  */
