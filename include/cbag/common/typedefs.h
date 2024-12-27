@@ -49,6 +49,7 @@ limitations under the License.
 
 #include <cstdint>
 #include <tuple>
+#include <limits>
 
 namespace cbag {
 

@@ -62,13 +62,13 @@ namespace spirit {
 namespace parser {
 
 // after parsing start, set default values of stop and step
-auto init_range = [](auto &ctx) {
+inline auto init_range = [](auto &ctx) {
     x3::_val(ctx).stop = x3::_attr(ctx);
     x3::_val(ctx).step = 1;
 };
 
 // make sure value is not 0
-auto check_zero = [](auto &ctx) { x3::_pass(ctx) = (x3::_attr(ctx) != 0); };
+inline auto check_zero = [](auto &ctx) { x3::_pass(ctx) = (x3::_attr(ctx) != 0); };
 
 range_type const range = "range";
 
